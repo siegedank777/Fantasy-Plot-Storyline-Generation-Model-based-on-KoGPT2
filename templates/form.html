@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fantasy Novel Assist - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<script src="../static/index.js"></script>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-white" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-15 mb-3">
+                    <h5 class="text-white"><i class="fa fa-user-edit me-2"></i>Fantasy Novel Assist</h5>
+                </a>
+
+              <div class="navbar-nav w-100">
+
+                 <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>대시보드</a>
+                
+                  <a href="pricing.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>후원하기</a>
+                  <a href="form.html" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>글쓰기</a>
+                  
+                  <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>마이페이지</a>
+                      <div class="dropdown-menu bg-transparent border-0">
+                          <a href="signin.html" class="dropdown-item">로그인</a>
+                          <a href="signup.html" class="dropdown-item">회원가입</a>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+      </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-white mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-25 col-xl-50">
+                        
+                    <div class="col-sm-12 col-xl-16">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h1 class="text-center mb-4">창작 시작</h1>
+
+
+                            <div class="container">
+                                <div class="jumbotron mt-3">
+
+                                    <div class="Notice">
+                                        <h3>알림</h3>
+                                        <ul>
+                                            <li>내용생성을 누르면 결과중에서 원하는 문장을 선택하는게 가능합니다.</li>
+                                            <li>이것은 데모버전입니다.</li>
+                                            <li>가끔 이상한 결과가 나올수도 있습니다.</li>
+                                        </ul>
+                                    </div>
+                        
+                                    <hr width="100%">
+
+                                    <fieldset class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-0">문장길이 선택</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="length"
+                                                    id="gridRadios1" value="short" checked>
+                                                <label class="form-check-label" for="gridRadios1">
+                                                    짧은 문장
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="length"
+                                                    id="gridRadios2" value="long">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    긴 문장
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-0">문장생성 실행</legend>
+                                        <div class="col-sm-10">
+
+                                            <button id="btn_autocomplete" class="btn btn-primary" onclick="suggestion()">내용생성</button>
+                                            <button id="btn_autocomplete" class="btn btn-primary" onclick="clearContext()">내용초기화</button>
+
+                                        </div>
+                                    </fieldset>
+
+                    
+                                    <textarea class="form-control" placeholder="내용" id="context" style="width:100%; height: 300px; display: block; margin-bottom: 10px;"></textarea>
+                                    
+                                    <b>결과</b>
+                                    <div id="select_box">
+                                        <ul style="width:100%">
+                                            <li class="item" onclick="concat(this.innerHTML)"></li>
+                                            <li class="item" onclick="concat(this.innerHTML)"></li>
+                                            <li class="item" onclick="concat(this.innerHTML)"></li>
+                                            <li class="item" onclick="concat(this.innerHTML)"></li>
+                                            <li class="item" onclick="concat(this.innerHTML)"></li>
+                                        </ul>
+                                    </div>
+                            
+
+
+                                    <hr width="100%">
+
+                                    <div class="sample">
+                                        <h3><label>예시</label></h3>
+
+                                        <h5><label>입력</label></h5>
+                                        <label>나는 동굴속으로 들어간후 칼을 들었다. 하지만 어두워서 아무것도 안보였다.</label><br><br>
+                                        <h5><label>결과</label></h5>
+                                        <label>나는 동굴속으로 들어간후 칼을 들었다. 하지만 어두워서 아무것도 안보였다."이런거야. 그쪽에서 한놈은 잡고  있지만.""어떻게 할수가 있을까.""그건 지금부터 가르쳐 주겠어요. 당신이 여기 있으면 당신을 도와야지요.""내가 뭘 하는건가 생각해 보기라도 한번 해 보는거야."김리가 중얼거렸다."이쪽으로 갑시다!"그러자 시리스도 말했다."그렇게 할테니까."시리스도 말하면서 주먹을 불끈 쥔  다음  뒤를 돌아보았다.  그쪽에서 검은 그림자가 동굴을 향해 날아가고 있었다. 그곳엔 뭔가 작은 단도 하나 있었다. 그것은 바리스 병사들을 향해 던졌다. 던지기 직전에 검은 그림자가 다가오고 있는 것이였다. 분명히 시리스는 이쪽에서 달려드는 적병을 제지시키려고 하는 듯 했다."자, 일동. 여기서부터  어떻게 할까?"판은 그렇게 중얼거렸다."</label><br><br>
+                                    </div>
+
+                                    <br><hr width="100%">
+                                </div>
+                            </div>
+
+                
+
+
+                        </div>
+
+
+                </div>
+            </div>
+            <!-- Form End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Fantasy Novel Assiste</a>, All Right Reserved. 
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
